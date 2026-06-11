@@ -6,11 +6,17 @@
   <title>PHYTOCHEM™ | P&DI em Ciência Botânica Aplicada e Bioativos Naturais</title>
   <meta name="description" content="A PHYTOCHEM™ transforma biodiversidade em soluções aplicadas com evidências científicas, desenvolvendo projetos com bioativos naturais, fitoquímica, isolamento, rastreabilidade e aplicações industriais.">
   <meta name="keywords" content="Phytochem, fitoquímica, bioativos naturais, ciência botânica aplicada, P&DI, evidência científica, biodiversidade brasileira, química analítica, rastreabilidade">
+  <link rel="canonical" href="https://joelalbertofernandes.github.io/Phytochem/">
+  <link rel="alternate" hreflang="pt-BR" href="https://joelalbertofernandes.github.io/Phytochem/?lang=pt">
+  <link rel="alternate" hreflang="en" href="https://joelalbertofernandes.github.io/Phytochem/?lang=en">
+  <link rel="alternate" hreflang="es" href="https://joelalbertofernandes.github.io/Phytochem/?lang=es">
+  <link rel="alternate" hreflang="x-default" href="https://joelalbertofernandes.github.io/Phytochem/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="styles.css?v=5">
+  <script src="translations.js?v=5" defer></script>
+  <script src="script.js?v=6" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Ir para o conteúdo</a>
@@ -21,19 +27,24 @@
       <a href="#inicio">Início</a><a href="#sobre">Sobre</a><a href="#solucoes">Soluções</a><a href="#pdi">P&DI</a>
       <a href="#sustentabilidade">Sustentabilidade</a><a href="#insights">Insights</a><a href="#equipe">Corpo técnico</a><a href="#contato">Contato</a>
     </nav>
-    <a class="button button-copper header-cta" href="#contato">Agendar conversa</a>
+    <div class="language-switcher" aria-label="Selecionar idioma">
+      <button type="button" data-lang="pt" aria-label="Português" title="Português"><span class="flag flag-br"></span><span class="lang-code">PT</span></button>
+      <button type="button" data-lang="en" aria-label="English" title="English"><span class="flag flag-us"></span><span class="lang-code">EN</span></button>
+      <button type="button" data-lang="es" aria-label="Español" title="Español"><span class="flag flag-es"></span><span class="lang-code">ES</span></button>
+    </div>
+    <a class="button button-copper header-cta open-scheduler" href="#agenda">Agendar conversa</a>
   </header>
 
   <main id="main">
     <section class="hero" id="inicio">
-      <div class="hero-bg" aria-hidden="true"></div><div class="hero-grid" aria-hidden="true"></div>
+      <div class="hero-bg" aria-hidden="true"></div><div class="hero-light-beam" aria-hidden="true"></div><div class="hero-particles" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div><div class="hero-grid" aria-hidden="true"></div>
       <div class="hero-content reveal">
         <span class="eyebrow light">// CIÊNCIA BOTÂNICA APLICADA</span>
         <p class="hero-brand">PHYTOCHEM™</p>
         <h1>Bioativos naturais com <em>evidência científica.</em></h1>
         <p class="hero-lead">Transformamos biodiversidade em soluções aplicadas com evidências científicas.</p>
         <p class="hero-copy">Conectamos biodiversidade, fitoquímica e tecnologia analítica ao desenvolvimento de soluções com bioativos naturais, rastreabilidade, isolamento e validação técnico-científica.</p>
-        <div class="hero-actions"><a class="button button-ivory" href="#solucoes">Conheça nossas soluções</a><a class="button button-ghost" href="#contato">Agendar conversa</a></div>
+        <div class="hero-actions"><a class="button button-ivory" href="#solucoes">Conheça nossas soluções</a><a class="button button-ghost open-scheduler" href="#agenda">Agendar conversa</a></div>
         <p class="microcopy">Pesquisa <b>•</b> Fitoquímica <b>•</b> Isolamento <b>•</b> Evidências <b>•</b> Aplicações industriais</p>
       </div>
       <a class="scroll-cue" href="#sobre"><span></span>Descobrir</a>
@@ -82,6 +93,22 @@
       </div>
     </section>
 
+    <section class="section isolation-section" id="isolamento">
+      <div class="container">
+        <div class="section-head split reveal"><div><span class="eyebrow">PIPELINE EXCLUSIVA</span><h2>Isolamento de Compostos Bioativos</h2></div><p>Uma jornada científica independente, orientada à obtenção, purificação e validação de compostos naturais com precisão analítica.</p></div>
+        <div class="isolation-pipeline reveal" aria-label="Pipeline de isolamento de compostos bioativos">
+          <article><span class="isolation-icon">⌁</span><b>01</b><h3>Coleta Botânica</h3><p>Origem responsável e seleção criteriosa.</p></article>
+          <article><span class="isolation-icon">◇</span><b>02</b><h3>Preparação da Matéria-Prima</h3><p>Tratamento técnico para preservar o potencial químico.</p></article>
+          <article><span class="isolation-icon">⚗</span><b>03</b><h3>Extração</h3><p>Processos dirigidos por rendimento e seletividade.</p></article>
+          <article><span class="isolation-icon">≋</span><b>04</b><h3>Fracionamento</h3><p>Separação orientada pelo perfil fitoquímico.</p></article>
+          <article><span class="isolation-icon">◈</span><b>05</b><h3>Purificação</h3><p>Refinamento progressivo de frações de interesse.</p></article>
+          <article><span class="isolation-icon">◎</span><b>06</b><h3>Isolamento</h3><p>Obtenção de compostos com identidade definida.</p></article>
+          <article><span class="isolation-icon">⌬</span><b>07</b><h3>Caracterização Analítica</h3><p>Elucidação e confirmação técnico-analítica.</p></article>
+          <article><span class="isolation-icon">✓</span><b>08</b><h3>Validação Científica</h3><p>Evidências consistentes para aplicações futuras.</p></article>
+        </div>
+      </div>
+    </section>
+
     <section class="section markets">
       <div class="container"><div class="section-head reveal"><span class="eyebrow">MERCADOS-CHAVE</span><h2>Onde os bioativos naturais geram valor</h2><p>Soluções rastreáveis e suporte técnico-científico para mercados de alta exigência.</p></div>
         <div class="market-grid">
@@ -97,17 +124,23 @@
     </section>
 
     <section class="section insights" id="insights"><div class="container"><div class="section-head split reveal"><div><span class="eyebrow">HUB EDITORIAL</span><h2>Insights Científicos</h2></div><p>Conhecimento e evidências para empresas e parceiros que priorizam inovação botânica aplicada.</p></div>
-      <div class="insight-grid"><a class="insight-card reveal" href="https://www.linkedin.com/company/phytochem" target="_blank" rel="noreferrer"><img src="assets/images/insight-fingerprint.webp" alt="Extrato botânico e fingerprint fitoquímico" loading="lazy"><span>FITOQUÍMICA APLICADA · 6 MIN</span><h3>Da matriz natural ao fingerprint: por que padronizar?</h3><p>Consistência analítica como base para inovação com bioativos.</p></a><a class="insight-card reveal" href="https://www.linkedin.com/company/phytochem" target="_blank" rel="noreferrer"><img src="assets/images/insight-evidence.webp" alt="Instrumentação analítica gerando evidências científicas" loading="lazy"><span>EVIDÊNCIAS · 5 MIN</span><h3>Evidências técnicas que fortalecem decisões B2B</h3><p>O papel da química analítica na confiança e diferenciação.</p></a><a class="insight-card reveal" href="https://www.linkedin.com/company/phytochem" target="_blank" rel="noreferrer"><img src="assets/images/insight-applied-science.webp" alt="Espécime botânico conectado à pesquisa aplicada" loading="lazy"><span>P&DI · 8 MIN</span><h3>Como transformar biodiversidade em aplicação</h3><p>Um caminho orientado por ciência, dados e visão de mercado.</p></a></div>
-      <a class="text-link" href="https://www.linkedin.com/company/phytochem" target="_blank" rel="noreferrer">Ver todas as publicações →</a></div>
+      <div class="insight-grid"><a class="insight-card reveal" href="https://www.linkedin.com/company/phytochemlab/" target="_blank" rel="noreferrer"><img src="assets/images/insight-fingerprint.webp" alt="Extrato botânico e fingerprint fitoquímico" loading="lazy"><span>FITOQUÍMICA APLICADA · 6 MIN</span><h3>Da matriz natural ao fingerprint: por que padronizar?</h3><p>Consistência analítica como base para inovação com bioativos.</p></a><a class="insight-card reveal" href="https://www.linkedin.com/company/phytochemlab/" target="_blank" rel="noreferrer"><img src="assets/images/insight-evidence.webp" alt="Instrumentação analítica gerando evidências científicas" loading="lazy"><span>EVIDÊNCIAS · 5 MIN</span><h3>Evidências técnicas que fortalecem decisões B2B</h3><p>O papel da química analítica na confiança e diferenciação.</p></a><a class="insight-card reveal" href="https://www.linkedin.com/company/phytochemlab/" target="_blank" rel="noreferrer"><img src="assets/images/insight-applied-science.webp" alt="Espécime botânico conectado à pesquisa aplicada" loading="lazy"><span>P&DI · 8 MIN</span><h3>Como transformar biodiversidade em aplicação</h3><p>Um caminho orientado por ciência, dados e visão de mercado.</p></a></div>
+      <a class="text-link" href="https://www.linkedin.com/company/phytochemlab/" target="_blank" rel="noreferrer">Ver todas as publicações →</a></div>
     </section>
 
     <section class="section team" id="equipe"><div class="container"><div class="section-head reveal"><span class="eyebrow">CORPO TÉCNICO</span><h2>Liderança científica para soluções com bioativos naturais</h2><p>Parceiras estratégicas para empresas, laboratórios e instituições que buscam rigor técnico, evidências e inovação aplicada.</p></div>
-      <div class="team-grid"><article class="person-card reveal"><div class="person-image"><img src="assets/images/aline.webp" alt="Aline Borges Reche, CEO e fundadora da Phytochem" loading="lazy"></div><div class="person-copy"><span>CEO & FOUNDER</span><h3>Aline Borges Reche</h3><b>Pesquisa biomédica, P&DI e qualidade científica.</b><p>Liderança científica e empreendedora com atuação em pesquisa, desenvolvimento e estruturação de soluções com bioativos naturais.</p><a href="https://www.linkedin.com/company/phytochem" target="_blank" rel="noreferrer">Ver LinkedIn →</a></div></article><article class="person-card reveal"><div class="person-image"><img src="assets/images/ilza.webp" alt="Ilza Maria Oliveira de Souza, Chief Scientific Officer da Phytochem" loading="lazy"></div><div class="person-copy"><span>CHIEF SCIENTIFIC OFFICER</span><h3>Ilza Maria Oliveira de Souza</h3><b>Fitoquímica, produtos naturais e ciência botânica aplicada.</b><p>Pesquisadora com ampla experiência em produtos naturais, fitoquímica aplicada e desenvolvimento científico.</p><a href="https://www.linkedin.com/company/phytochem" target="_blank" rel="noreferrer">Ver LinkedIn →</a></div></article></div>
+      <div class="team-grid"><article class="person-card reveal"><div class="person-image"><img src="assets/images/aline.webp" alt="Aline Borges Reche, CEO e fundadora da Phytochem" loading="lazy"></div><div class="person-copy"><span>CEO & FOUNDER</span><h3>Aline Borges Reche</h3><b>Pesquisa biomédica, P&DI e qualidade científica.</b><p>Liderança científica e empreendedora com atuação em pesquisa, desenvolvimento e estruturação de soluções com bioativos naturais.</p><a href="https://www.linkedin.com/in/alineborgesreche/" target="_blank" rel="noreferrer">Ver LinkedIn →</a></div></article><article class="person-card reveal"><div class="person-image"><img src="assets/images/ilza.webp" alt="Ilza Maria Oliveira Sousa, Chief Scientific Officer da Phytochem" loading="lazy"></div><div class="person-copy"><span>CHIEF SCIENTIFIC OFFICER</span><h3>Ilza Maria Oliveira Sousa</h3><b>Fitoquímica, produtos naturais e ciência botânica aplicada.</b><p>Pesquisadora com ampla experiência em produtos naturais, fitoquímica aplicada e desenvolvimento científico.</p><a href="https://www.linkedin.com/in/ilza-maria-oliveira-sousa-48b1352b9/" target="_blank" rel="noreferrer">Ver LinkedIn →</a></div></article></div>
     </div></section>
 
-    <section class="final-cta" id="contato"><div class="final-cta-bg" aria-hidden="true"></div><div class="container reveal"><img src="assets/images/logo-white.png" alt="PHYTOCHEM"><span class="eyebrow light">// CONEXÃO CIENTÍFICA B2B</span><h2>Vamos transformar biodiversidade em soluções com evidência científica?</h2><p>Converse com a PHYTOCHEM™ para estruturar, validar ou desenvolver soluções com bioativos naturais, rastreabilidade técnica e visão de mercado.</p><div class="hero-actions"><a class="button button-ivory" href="https://www.linkedin.com/company/phytochem" target="_blank" rel="noreferrer">Agendar conversa</a><a class="button button-ghost" href="https://www.linkedin.com/company/phytochem" target="_blank" rel="noreferrer">Falar com a Phytochem</a><a class="button button-ghost" href="#solucoes">Conhecer soluções</a></div></div></section>
+    <section class="section connections" id="conexoes"><div class="container"><div class="section-head split reveal"><div><span class="eyebrow">CONEXÕES OFICIAIS</span><h2>Canais institucionais</h2></div><p>Conecte-se com a PHYTOCHEM™ por nossos canais oficiais.</p></div><div class="connection-grid"><a href="https://www.linkedin.com/company/phytochemlab/" target="_blank" rel="noreferrer"><span>in</span><b>LinkedIn Corporativo</b><small>linkedin.com/company/phytochemlab</small></a><a href="https://www.instagram.com/phytochem.lab/" target="_blank" rel="noreferrer"><span>◎</span><b>Instagram Oficial</b><small>@phytochem.lab</small></a><a href="mailto:comercial@phytochem.com.br"><span>@</span><b>E-mail Comercial</b><small>comercial@phytochem.com.br</small></a></div></div></section>
+
+    <section class="section recognition"><div class="container recognition-grid"><div class="reveal"><span class="eyebrow">RECONHECIMENTOS E VINCULAÇÕES INSTITUCIONAIS</span><h2>Ciência conectada a um ecossistema de inovação.</h2><p>A PHYTOCHEM™ integra a rede de empresas-filhas da Unicamp, fortalecendo sua conexão com pesquisa, empreendedorismo científico e inovação aplicada.</p></div><div class="unicamp-seal reveal"><img src="assets/images/unicamp-empresa-filha.png" alt="Selo oficial Empresa-Filha da Unicamp" loading="lazy"></div></div></section>
+
+    <section class="final-cta" id="contato"><div class="final-cta-bg" aria-hidden="true"></div><div class="container reveal"><img src="assets/images/logo-white.png" alt="PHYTOCHEM"><span class="eyebrow light">// CONEXÃO CIENTÍFICA B2B</span><h2>Vamos transformar biodiversidade em soluções com evidência científica?</h2><p>Converse com a PHYTOCHEM™ para estruturar, validar ou desenvolver soluções com bioativos naturais, rastreabilidade técnica e visão de mercado.</p><div class="hero-actions"><a class="button button-ivory open-scheduler" href="#agenda">Agendar conversa</a><a class="button button-ghost" href="mailto:comercial@phytochem.com.br">Falar com a Phytochem</a><a class="button button-ghost" href="#solucoes">Conhecer soluções</a></div></div></section>
   </main>
 
-  <footer><div class="container footer-grid"><div><img src="assets/images/logo-white.png" alt="PHYTOCHEM"><p>P&DI em Ciência Botânica Aplicada.<br>Bioativos naturais com evidência científica.</p></div><div><b>Navegação</b><a href="#sobre">Sobre</a><a href="#solucoes">Soluções</a><a href="#pdi">P&DI</a><a href="#sustentabilidade">Sustentabilidade</a></div><div><b>Conexões</b><a href="https://www.linkedin.com/company/phytochem" target="_blank" rel="noreferrer">LinkedIn</a><a href="#contato">Contato</a></div></div><div class="container copyright"><span>© PHYTOCHEM™. Todos os direitos reservados.</span><span>Ciência · Rastreabilidade · Evidência</span></div></footer>
+  <dialog class="scheduler-dialog" id="scheduler-dialog"><form method="dialog" class="scheduler-card" id="scheduler-form"><button class="scheduler-close" value="cancel" aria-label="Fechar agenda">×</button><span class="eyebrow">AGENDA B2B</span><h2>Agende uma conversa científica</h2><p>Escolha uma data e um horário. Ao continuar, o Google Calendar abrirá o convite com a equipe comercial da PHYTOCHEM™.</p><label>Data<input type="date" name="date" required></label><label>Horário<input type="time" name="time" required></label><label>Duração<select name="duration"><option value="45">45 minutos</option><option value="60">60 minutos</option></select></label><label>Assunto<input type="text" name="subject" placeholder="Ex.: Projeto com bioativos naturais"></label><button class="button button-copper" type="submit">Continuar no Google Calendar</button><small>O convite será preparado com comercial@phytochem.com.br como participante.</small></form></dialog>
+
+  <footer><div class="container footer-grid"><div><img src="assets/images/logo-white.png" alt="PHYTOCHEM"><p>P&DI em Ciência Botânica Aplicada.<br>Bioativos naturais com evidência científica.</p></div><div><b>Navegação</b><a href="#sobre">Sobre</a><a href="#solucoes">Soluções</a><a href="#pdi">P&DI</a><a href="#sustentabilidade">Sustentabilidade</a></div><div><b>Conexões Oficiais</b><a href="https://www.linkedin.com/company/phytochemlab/" target="_blank" rel="noreferrer">LinkedIn Corporativo</a><a href="https://www.instagram.com/phytochem.lab/" target="_blank" rel="noreferrer">Instagram Oficial</a><a href="mailto:comercial@phytochem.com.br">comercial@phytochem.com.br</a></div></div><div class="container copyright"><span>© PHYTOCHEM™. Todos os direitos reservados.</span><span>Ciência · Rastreabilidade · Evidência</span></div></footer>
 </body>
 </html>
