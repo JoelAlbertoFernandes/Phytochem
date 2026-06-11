@@ -7,6 +7,7 @@ const schedulerForm = document.querySelector('#scheduler-form');
 const languageButtons = document.querySelectorAll('[data-lang]');
 const originalText = new WeakMap();
 const originalAttributes = new WeakMap();
+let currentLanguage = 'pt';
 
 const updateHeader = () => header.classList.toggle('scrolled', scrollY > 30);
 updateHeader();
@@ -15,7 +16,7 @@ addEventListener('scroll', updateHeader, { passive: true });
 menuButton.addEventListener('click', () => {
   const open = nav.classList.toggle('open');
   menuButton.setAttribute('aria-expanded', open);
-  menuButton.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+  menuButton.setAttribute('aria-label', translateValue(open ? 'Fechar menu' : 'Abrir menu', currentLanguage));
 });
 
 nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
@@ -46,14 +47,15 @@ schedulerForm.addEventListener('submit', event => {
   const data = new FormData(schedulerForm);
   const start = new Date(`${data.get('date')}T${data.get('time')}:00`);
   const end = new Date(start.getTime() + Number(data.get('duration')) * 60000);
-  const subject = data.get('subject') || 'Conversa científica B2B com a PHYTOCHEM';
-  const details = 'Conversa sobre P&DI em Ciência Botânica Aplicada e soluções com bioativos naturais.';
+  const content = window.PHYTOCHEM_CONTENT[currentLanguage];
+  const subject = data.get('subject') || content.scheduler.defaultSubject;
+  const details = content.scheduler.details;
   const params = new URLSearchParams({
     action: 'TEMPLATE',
     text: subject,
     dates: `${calendarDate(start)}/${calendarDate(end)}`,
     details,
-    add: 'comercial@phytochem.com.br'
+    add: content.links.commercialEmail
   });
   window.open(`https://calendar.google.com/calendar/render?${params}`, '_blank', 'noopener,noreferrer');
   scheduler.close();
@@ -71,22 +73,52 @@ while (walker.nextNode()) {
   }
 }
 
-const translatedAttributes = [...document.querySelectorAll('[aria-label],[title],[placeholder]')];
+const translatedAttributes = [...document.querySelectorAll('[aria-label],[title],[placeholder],[alt]')];
 translatedAttributes.forEach(element => {
   originalAttributes.set(element, {
     'aria-label': element.getAttribute('aria-label'),
     title: element.getAttribute('title'),
-    placeholder: element.getAttribute('placeholder')
+    placeholder: element.getAttribute('placeholder'),
+    alt: element.getAttribute('alt')
   });
 });
 
 const translateValue = (value, lang) => {
-  if (!value || lang === 'pt') return value;
-  return window.PHYTOCHEM_I18N?.[lang]?.[value] || value;
+  if (!value) return value;
+  return window.PHYTOCHEM_CONTENT?.[lang]?.texts?.[value] || value;
+};
+
+const linkTargets = {
+  linkedinCompany: [...document.querySelectorAll('a[href="https://www.linkedin.com/company/phytochemlab/"]')],
+  instagram: [...document.querySelectorAll('a[href="https://www.instagram.com/phytochem.lab/"]')],
+  alineLinkedIn: [...document.querySelectorAll('a[href="https://www.linkedin.com/in/alineborgesreche/"]')],
+  ilzaLinkedIn: [...document.querySelectorAll('a[href="https://www.linkedin.com/in/ilza-maria-oliveira-sousa-48b1352b9/"]')],
+  commercialEmail: [...document.querySelectorAll('a[href^="mailto:"]')]
+};
+const emailTextTargets = document.querySelectorAll('.connection-grid a[href^="mailto:"] small, footer a[href^="mailto:"]');
+const linkedinLabelTargets = document.querySelectorAll('.connection-grid a[href="https://www.linkedin.com/company/phytochemlab/"] small');
+const instagramLabelTargets = document.querySelectorAll('.connection-grid a[href="https://www.instagram.com/phytochem.lab/"] small');
+
+const applyLinks = links => {
+  Object.entries(linkTargets).forEach(([name, targets]) => {
+    const value = links[name];
+    if (!value) return;
+    targets.forEach(target => target.href = name === 'commercialEmail' ? `mailto:${value}` : value);
+  });
+  emailTextTargets.forEach(target => target.textContent = links.commercialEmail);
+  linkedinLabelTargets.forEach(target => target.textContent = links.linkedinCompanyLabel);
+  instagramLabelTargets.forEach(target => target.textContent = links.instagramLabel);
+  document.querySelector('link[rel="canonical"]').href = links.siteUrl;
+  document.querySelectorAll('link[rel="alternate"]').forEach(link => {
+    const lang = link.hreflang;
+    link.href = lang === 'x-default' ? links.siteUrl : `${links.siteUrl}?lang=${lang === 'pt-BR' ? 'pt' : lang}`;
+  });
 };
 
 const applyLanguage = (lang, updateUrl = true) => {
   if (!['pt', 'en', 'es'].includes(lang)) lang = 'pt';
+  currentLanguage = lang;
+  const content = window.PHYTOCHEM_CONTENT[lang];
   textNodes.forEach(node => {
     const source = originalText.get(node);
     const leading = node.nodeValue.match(/^\s*/)?.[0] || '';
@@ -99,10 +131,11 @@ const applyLanguage = (lang, updateUrl = true) => {
       if (value !== null) element.setAttribute(name, translateValue(value, lang));
     });
   });
-  const meta = window.PHYTOCHEM_I18N.meta[lang];
+  const meta = content.meta;
   document.documentElement.lang = meta.lang;
   document.title = meta.title;
   document.querySelector('meta[name="description"]').content = meta.description;
+  applyLinks(content.links);
   languageButtons.forEach(button => {
     const active = button.dataset.lang === lang;
     button.classList.toggle('active', active);
